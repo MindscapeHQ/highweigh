@@ -89,7 +89,7 @@ class Roadmap {
     if (offset !== null) {
       const svg = document.getElementById("svg");
       const path = newElement('path', svg);
-      path.setAttribute('d', `M${offset + 40},60 V900`);
+      path.setAttribute('d', `M${offset + 40},60 V${this.yOffset + 50}`);
       path.classList.add('today-line');
     }
   }
