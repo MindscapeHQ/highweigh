@@ -29,7 +29,7 @@ Top level
     "title": "An example roadmap",  // what's this roadmap all about then?
     "lastUpdated": "22 July 2021",  // when did you last update it? any string is fine.
     "startMonth": "2021-05",        // what's the first month to display?
-    "months": 7,                    // it only supports 7 at the moment
+    "months": 7,                    // how many months would you like to show?
     "projects": [
                                     // see Project/Epic below
     ]

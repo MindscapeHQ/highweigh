@@ -17,6 +17,7 @@ class Roadmap {
     this.data = data;
     this.monthStartPosition = 300;
     this.monthWidth = 100;
+    this.graphWidth = this.monthStartPosition + this.monthWidth * this.data.months - 50;
     this.yOffset = 70;
 
     const [y, m] = this.data.startMonth.split("-").map(x => parseInt(x));
@@ -25,11 +26,6 @@ class Roadmap {
   }
 
   draw() {
-    if (this.data.months !== 7) {
-      alert("This only works with 7 months at the moment :(");
-      return;
-    }
-
     document.getElementsByTagName('title')[0].innerText = `${this.data.title} - Highweigh`;
     document.getElementById("title").innerText = this.data.title;
     document.getElementById("updated").innerText = `Last updated ${this.data.lastUpdated}`;
@@ -48,21 +44,31 @@ class Roadmap {
 
   drawGridlines() {
     const gridlines = document.getElementById('gridlines');
-
     const y = this.yOffset;
+
+    let solid = `M40,0 H${this.graphWidth} M40,50 H${this.graphWidth} M40,0 V${y} M90,0 V${y}`;
+    let dotted = '';
+
+    for (let month = 0; month <= this.data.months; month++) {
+      solid += ` M${250 + this.monthWidth * month},0 V${y}`;
+      dotted += ` M${300 + this.monthWidth * month},50 V${y}`;
+    }
 
     const majorLines = newElement('path', gridlines);
     majorLines.classList.add('line');
-    majorLines.setAttribute('d', `M40,0 H950 M40,50 H950 M40,0 V${y} M90,0 V${y} M250,0 V${y} M350,0 V${y} M450,0 V${y} M550,0 V${y} M650,0 V${y} M750,0 V${y} M850,0 V${y} M950,0 V${y}`);
+    majorLines.setAttribute('d', solid);
 
     const halfMonthLines = newElement('path', gridlines);
     halfMonthLines.classList.add('dotted-line');
-    halfMonthLines.setAttribute('d', `M300,50 V${y} M400,50 V${y} M500,50 V${y} M600,50 V${y} M700,50 V${y} M800,50 V${y} M900,50 V${y}`);
+    halfMonthLines.setAttribute('d', dotted);
   }
 
   resizeViewport() {
     const svg = document.getElementById("svg");
-    svg.setAttribute('viewBox', `0 0 1000 ${this.yOffset + 50}`);
+    const width = this.monthStartPosition + this.monthWidth * this.data.months;
+    const height = this.yOffset + 50;
+
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
   }
 
   clearRemainingSpace() {
@@ -120,7 +126,7 @@ class Roadmap {
 
     if (project.epics && project.epics.length) {
       const separator = newElement('path', g);
-      separator.setAttribute('d', "M0,50 H910");
+      separator.setAttribute('d', `M0,50 H${this.graphWidth - 40}`);
       separator.classList.add('dotted-line');
 
       for (const epic of project.epics) {
@@ -135,7 +141,7 @@ class Roadmap {
     }
 
     const divider = newElement('path', svg);
-    divider.setAttribute('d', `M40,${this.yOffset} H950`);
+    divider.setAttribute('d', `M40,${this.yOffset} H${this.graphWidth}`);
     divider.classList.add('line');
   }
 
@@ -200,20 +206,21 @@ class Roadmap {
   }
 
   calculateOffset(date, isStopDate) {
-    const [year, month, day] = date.split("-").map(x => parseInt(x));
+    let [year, month, day] = date.split("-").map(x => parseInt(x));
 
-    let monthDifference = (year - this.startYear) * 12 + month - this.startMonth;
-    if (monthDifference < 0) { return null; }
+    let monthOffset = (year - this.startYear) * 12 + month - this.startMonth;
+    if (monthOffset < 0) { return null; }
 
-    if (monthDifference >= this.data.months) {
+    if (monthOffset >= this.data.months) {
       if (isStopDate) {
-        monthDifference = this.data.months;
+        monthOffset = this.data.months;
+        day = 1;
       } else {
         return null;
       }
     }
 
-    return this.monthStartPosition - 90 + Math.floor(this.monthWidth * (monthDifference + ((day - 1) / (daysInMonth[month] - 1))));
+    return this.monthStartPosition - 90 + Math.floor(this.monthWidth * (monthOffset + ((day - 1) / (daysInMonth[month] - 1))));
   }
 }
 
