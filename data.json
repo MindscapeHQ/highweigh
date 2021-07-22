@@ -1,0 +1,123 @@
+{
+  "title": "An example roadmap",
+  "lastUpdated": "22 July 2021",
+  "startMonth": "2021-05",
+  "months": 7,
+  "projects": [
+    {
+      "name": "Megaproject",
+      "rag": "green",
+      "bars": [
+        {"start": "2021-05-01", "stop": "2021-05-15", "type": "discovery"},
+        {"start": "2021-05-15", "stop": "2021-10-10", "type": "delivery"},
+        {"start": "2021-10-10", "stop": "2021-10-24", "type": "post-release"}
+      ],
+      "milestones": {"2021-10-10": "committed"},
+      "epics": [
+        {
+          "name": "Assemble widgets",
+          "bars": [
+            {"start": "2021-05-15", "stop": "2021-07-01", "type": "delivery"},
+            {"start": "2021-07-01", "stop": "2021-07-07", "type": "overdue"}
+          ]
+        },
+        {
+          "name": "Compile flanges",
+          "bars": [
+            {"start": "2021-07-07", "stop": "2021-08-01", "type": "delivery"},
+            {"start": "2021-08-01", "stop": "2021-08-10", "type": "overdue"}
+          ]
+        },
+        {
+          "name": "Bundle chunks",
+          "bars": [
+            {"start": "2021-07-01", "stop": "2021-07-07", "type": "delivery"},
+            {"start": "2021-08-07", "stop": "2021-08-14", "type": "delivery"}
+          ]
+        },
+        {
+          "name": "Populate canvases",
+          "bars": [{"start": "2021-08-01", "stop": "2021-09-01", "type": "delivery"}]
+        },
+        {
+          "name": "Interrogate intercellular membranes",
+          "bars": [{"start": "2021-09-01", "stop": "2021-09-08", "type": "delivery"}]
+        },
+        {
+          "name": "Frost cake",
+          "bars": [{"start": "2021-09-01", "stop": "2021-09-21", "type": "delivery"}]
+        },
+        {
+          "name": "Extricate plates",
+          "bars": [{"start": "2021-09-15", "stop": "2021-10-01", "type": "delivery"}]
+        }
+      ]
+    },
+
+    {
+      "name": "Great Unknown",
+      "rag": "none",
+      "bars": [
+        {"start": "2021-05-15", "stop": "2021-06-15", "type": "discovery"},
+        {"start": "2021-06-15", "stop": "2025-06-01", "type": "delivery"}
+      ]
+    },
+
+    {
+      "name": "Project Z",
+      "rag": "red",
+      "epics": [
+        {
+          "name": "Milestone 1",
+          "bars": [{"start": "2021-05-15", "stop": "2021-06-01", "type": "delivery"}],
+          "milestones": {"2021-06-01": "released"}
+        },
+        {
+          "name": "Milestone 2",
+          "bars": [
+            {"start": "2021-05-15", "stop": "2021-06-01", "type": "delivery"},
+            {"start": "2021-06-01", "stop": "2021-06-15", "type": "overdue"}
+          ],
+          "milestones": {"2021-06-15": "released"}
+        },
+        {
+          "name": "Milestone 3",
+          "bars": [{"start": "2021-06-25", "stop": "2021-07-07", "type": "overdue"}],
+          "milestones": {"2021-07-07": "deployed"}
+        },
+        {
+          "name": "Milestone 4",
+          "bars": [
+            {"start": "2021-06-01", "stop": "2021-06-07", "type": "discovery"},
+            {"start": "2021-06-07", "stop": "2021-07-15", "type": "delivery"}
+          ],
+          "milestones": {"2021-07-15": "released"}
+        },
+        {
+          "name": "Milestone 5",
+          "bars": [
+            {"start": "2021-06-30", "stop": "2021-07-10", "type": "discovery"},
+            {"start": "2021-07-10", "stop": "2021-07-15", "type": "delivery"}
+          ],
+          "milestones": {"2021-07-15": "released"}
+        },
+        {
+          "name": "Milestone 6",
+          "bars": [
+            {"start": "2021-07-13", "stop": "2021-07-18", "type": "discovery"},
+            {"start": "2021-07-18", "stop": "2021-08-11", "type": "delivery"}
+          ],
+          "milestones": {"2021-08-11": "estimated"}
+        },
+        {
+          "name": "Milestone 7",
+          "bars": [
+            {"start": "2021-07-19", "stop": "2021-07-27", "type": "delivery"}
+          ],
+          "milestones": {"2021-07-27": "estimated"}
+        }
+      ]
+    }
+  ]
+}
+

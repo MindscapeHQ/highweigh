@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Highweigh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700" rel="stylesheet">
+    <link href="highweigh.css" rel="stylesheet"></link>
+    <script src="highweigh.js"></script>
+  </head>
+
+  <body>
+    <svg viewBox="0 0 1000 600" id="svg">
+      <g transform="translate(0 20)" id="gridlines">
+      </g>
+
+      <g transform="translate(0 50)" id="header">
+        <text class="rag-heading" x="65">RAG</text>
+        <text class="project-heading" x="170">Project</text>
+      </g>
+    </svg>
+
+    <footer>
+      <div class="details">
+        <div id="title"></div>
+        <div id="updated"></div>
+      </div>
+
+      <div>
+        <div class="b">
+          <svg><rect class="bar discovery"></rect></svg>
+          <div>Discovery</div>
+        </div>
+        <div class="b">
+          <svg><rect class="bar delivery"></rect></svg>
+          <div>Delivery</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="b">
+          <svg><rect class="bar overdue"></rect></svg>
+          <div>Overdue</div>
+        </div>
+        <div class="b">
+          <svg><rect class="bar post-release"></rect></svg>
+          <div>Post-release</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="m">
+          <svg><rect class="milestone estimated"></rect></svg>
+          <div>Estimated</div>
+        </div>
+        <div class="m">
+          <svg><rect class="milestone committed"></rect></svg>
+          <div>Committed</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="m">
+          <svg><rect class="milestone deployed"></rect></svg>
+          <div>Deployed</div>
+        </div>
+        <div class="m">
+          <svg><rect class="milestone released"></rect></svg>
+          <div>Released</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
