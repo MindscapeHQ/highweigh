@@ -11,6 +11,8 @@ organisation without having to buy and configure yet another SaaS product.
 
 Highweigh has got your back.
 
+![A sample image of what highweigh looks like](.images/example-screenshot.png)
+
 ## How to use it
 
 Check out the sample `data.json`, and replace it with your projects and timelines.  Publish the contents of this
