@@ -40,7 +40,8 @@ Project/Epic
 ```
   {
     "name": "Megaproject",  // the name of your project or epic
-    "rag": "green",         // "green", "amber" or "red" - only used for projects
+    "rag": "green",         // "green", "amber", "red", "none" or not specified - only used for projects
+    "description": "Yay!",  // the project description, optional
     "bars": [
                             // see Bar below
     ],

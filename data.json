@@ -6,6 +6,7 @@
   "projects": [
     {
       "name": "Megaproject",
+      "description": "A project that will take us to the moon!",
       "rag": "green",
       "bars": [
         {"start": "2021-05-01", "stop": "2021-05-15", "type": "discovery"},

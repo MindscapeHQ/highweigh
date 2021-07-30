@@ -45,6 +45,14 @@ g.epic text {
   dominant-baseline: central;
 }
 
+g.project text.description, g.epic text.description {
+  text-anchor: end;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.38rem;
+  fill: #777;
+}
+
 svg .line {
   stroke: #ccc;
 }

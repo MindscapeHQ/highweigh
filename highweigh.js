@@ -162,6 +162,13 @@ class Roadmap {
     title.setAttribute('x', 195);
     title.setAttribute('y', 25);
 
+    if (data.description) {
+      const description = newElement('text', g, data.description);
+      description.setAttribute("x", 195);
+      description.setAttribute("y", 40);
+      description.classList.add('description');
+    }
+
     if (data.bars) {
       this.drawBars(data.bars, g);
     }
