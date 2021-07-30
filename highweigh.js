@@ -114,12 +114,14 @@ class Roadmap {
     g.classList.add('project');
     g.setAttribute('transform', `translate(40 ${this.yOffset})`);
 
-    const rag = newElement('circle', g);
-    rag.setAttribute('cx', 25);
-    rag.setAttribute('cy', 25);
-    rag.setAttribute('r', 10);
-    rag.classList.add('rag');
-    rag.classList.add(project.rag);
+    if (project.rag) {
+      const rag = newElement('circle', g);
+      rag.setAttribute('cx', 25);
+      rag.setAttribute('cy', 25);
+      rag.setAttribute('r', 10);
+      rag.classList.add('rag');
+      rag.classList.add(project.rag);
+    }
 
     this.drawProjectOrEpicLine(project, g);
     this.yOffset += 45;
