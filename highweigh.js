@@ -188,8 +188,14 @@ class Roadmap {
       rect.setAttribute('y', 20);
 
       const start = this.calculateOffset(bar.start);
+      const stop = this.calculateOffset(bar.stop, true);
+
       if (start !== null) {
-        const stop = this.calculateOffset(bar.stop, true);
+        rect.setAttribute('x', start);
+        rect.setAttribute('width', stop - start);
+      }
+      else if (stop !== null) {
+        const start = this.monthStartPosition - 90;
         rect.setAttribute('x', start);
         rect.setAttribute('width', stop - start);
       }
